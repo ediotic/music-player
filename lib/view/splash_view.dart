@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import '../view_model/splasH_view_model.dart';
 
 
+
+
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
 
@@ -13,7 +15,7 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  final splashVM = Get.put(SplashViewModel());
+  final splashVM = Get.put(SplashViewMode());
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);

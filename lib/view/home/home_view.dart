@@ -2,16 +2,19 @@
 
 // ignore_for_file: deprecated_member_use
 
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_player/common_widgets/playlist_cell.dart';
-import 'package:music_player/common_widgets/tittle_section.dart';
+import 'package:music_player/view_model/splasH_view_model.dart';
 
 import '../../common/color_extension.dart';
+import '../../common_widgets/playlist_cell.dart';
 import '../../common_widgets/recommended_cell.dart';
 import '../../common_widgets/songs_row.dart';
+import '../../common_widgets/tittle_section.dart';
 import '../../common_widgets/view_all_section.dart';
 import '../../view_model/home_view_model.dart';
+
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -29,16 +32,16 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         backgroundColor: TColor.bg,
         elevation: 0,
-        // leading: IconButton(
-        //     onPressed: () {
-        //       Get.find<SplashViewMode>().openDrawer();
-        //     },
-        //     icon: Image.asset(
-        //       "assets/img/menu.png",
-        //       width: 25,
-        //       height: 25,
-        //       fit: BoxFit.contain,
-        //     )),
+        leading: IconButton(
+            onPressed: () {
+              Get.find<SplashViewMode>().openDrawer();
+            },
+            icon: Image.asset(
+              "assets/img/menu.png",
+              width: 25,
+              height: 25,
+              fit: BoxFit.contain,
+            )),
         title: Row(
           children: [
             Expanded(
@@ -145,3 +148,5 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
+
+

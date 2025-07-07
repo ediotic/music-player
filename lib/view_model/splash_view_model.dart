@@ -1,12 +1,25 @@
+
+
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../view/main_tabView/main_tab_view.dart';
+import '../view/main_tabView/main_tabview.dart';
 
 
-class SplashViewModel extends GetxController {
+class SplashViewMode extends GetxController {
 
-  void loadView() async{
-   await Future.delayed(const Duration( seconds: 3));
-   Get.to(() => const MainTabview());
-  }
+    var scaffoldKey = GlobalKey<ScaffoldState>();
+
+    void loadView() async {
+       await Future.delayed(const Duration(seconds: 3) );
+       Get.to( () => const MainTabView() );
+    }
+
+    void openDrawer(){
+        scaffoldKey.currentState?.openDrawer();
+    }
+
+    void closeDrawer(){
+        scaffoldKey.currentState?.closeDrawer();
+    }
 }
