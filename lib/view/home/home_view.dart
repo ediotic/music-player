@@ -1,20 +1,14 @@
-
-
-// ignore_for_file: deprecated_member_use
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_player/view_model/splasH_view_model.dart';
+import 'package:music_player/common/color_extension.dart';
+import 'package:music_player/common_widget/recommended_cell.dart';
+import 'package:music_player/common_widget/title_section.dart';
+import 'package:music_player/view_model/splash_view_model.dart';
 
-import '../../common/color_extension.dart';
-import '../../common_widgets/playlist_cell.dart';
-import '../../common_widgets/recommended_cell.dart';
-import '../../common_widgets/songs_row.dart';
-import '../../common_widgets/tittle_section.dart';
-import '../../common_widgets/view_all_section.dart';
+import '../../common_widget/playlist_cell.dart';
+import '../../common_widget/songs_row.dart';
+import '../../common_widget/view_all_section.dart';
 import '../../view_model/home_view_model.dart';
-
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -86,9 +80,9 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TittleSection(tittle: "Hot Recommended"),
+            const TitleSection(title: "Hot Recommended"),
             SizedBox(
-              height: 193,
+              height: 190,
               child: ListView.builder(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -117,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
                   itemCount: homeVM.playListArr.length,
                   itemBuilder: (context, index) {
                     var mObj = homeVM.playListArr[index];
-                    return PlayListCell(mObj: mObj); 
+                    return PlaylistCell(mObj: mObj);
                   }),
             ),
             Divider(
@@ -148,5 +142,3 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
-
-

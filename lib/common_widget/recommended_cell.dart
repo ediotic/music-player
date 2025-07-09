@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../common/color_extension.dart';
 
-class PlayListCell extends StatelessWidget {
+class RecommendedCell extends StatelessWidget {
   final Map mObj;
-  const PlayListCell({super.key, required this.mObj});
+  const RecommendedCell({super.key, required this.mObj});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 110,
+      width: 230,
       margin: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,7 +19,7 @@ class PlayListCell extends StatelessWidget {
             child: Image.asset(
               mObj["image"],
               width: double.maxFinite,
-              height: 110,
+              height: 125,
               fit: BoxFit.cover,
             ),
           ),
@@ -31,7 +31,7 @@ class PlayListCell extends StatelessWidget {
             maxLines: 1,
             style: TextStyle(
                 color: TColor.primaryText60,
-                fontSize: 13,
+                fontSize: 11.5,
                 fontWeight: FontWeight.w700),
           ),
 

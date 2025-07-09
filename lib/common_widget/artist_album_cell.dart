@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../common/color_extension.dart';
 
-class RecommendedCell extends StatelessWidget {
-  final Map mObj;
-  const RecommendedCell({super.key, required this.mObj});
+class ArtistAlbumCell extends StatelessWidget {
+  final Map aObj;
+  const ArtistAlbumCell({super.key, required this.aObj});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 230,
+      width: 90,
       margin: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -17,31 +17,29 @@ class RecommendedCell extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(9),
             child: Image.asset(
-              mObj["image"],
+              aObj["image"],
               width: double.maxFinite,
-              height: 125,
+              height: 80,
               fit: BoxFit.cover,
             ),
           ),
-
-          const SizedBox(height: 15,),
-
+          const SizedBox(
+            height: 8,
+          ),
           Text(
-            mObj["name"],
+            aObj["name"],
             maxLines: 1,
             style: TextStyle(
                 color: TColor.primaryText60,
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: FontWeight.w700),
           ),
-
           Text(
-            mObj["artists"],
+            aObj["year"],
             maxLines: 1,
             style: TextStyle(
-                color: TColor.secondaryText,
-                fontSize: 10,
-                fontWeight: FontWeight.w700),
+                color: TColor.primaryText35,
+                fontSize: 10,),
           )
         ],
       ),

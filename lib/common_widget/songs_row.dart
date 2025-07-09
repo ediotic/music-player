@@ -1,19 +1,18 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:music_player/common_widgets/app_gap.dart';
+
 import '../common/color_extension.dart';
 
 class SongsRow extends StatelessWidget {
   final Map sObj;
   final VoidCallback onPressedPlay;
   final VoidCallback onPressed;
-  const SongsRow(
-      {super.key,
-      required this.sObj,
-      required this.onPressedPlay,
-      required this.onPressed});
+  const SongsRow({
+    super.key,
+    required this.sObj,
+    required this.onPressed,
+    required this.onPressedPlay,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,33 +30,34 @@ class SongsRow extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    sObj["name"],
-                    maxLines: 1,
-                    style: TextStyle(
-                        color: TColor.primaryText60,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  Text(
-                    sObj["artists"],
-                    maxLines: 1,
-                    style: TextStyle(
-                      color: TColor.secondaryText,
-                      fontSize: 10,
-                    ),
-                  )
-                ],
-              ),
-            ),
+                child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  sObj["name"],
+                  maxLines: 1,
+                  style: TextStyle(
+                      color: TColor.primaryText60,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700),
+                ),
+                Text(
+                  sObj["artists"],
+                  maxLines: 1,
+                  style: TextStyle(color: TColor.secondaryText, fontSize: 10),
+                )
+              ],
+            )),
             Column(
               
               children: [
-                Image.asset("assets/img/fav.png",height: 12,width: 12,),
-                const AppGap(height: 4,),
+                Image.asset(
+                  "assets/img/fav.png",
+                  width: 12,
+                  height: 12,
+                ),
+
+                const SizedBox(height: 4,),
                 IgnorePointer(
                   ignoring: true,
                   child: RatingBar.builder(
@@ -65,7 +65,7 @@ class SongsRow extends StatelessWidget {
                     minRating: 1,
                     direction: Axis.horizontal,
                     allowHalfRating: true,
-                    unratedColor: TColor.org.withOpacity(0.3),
+                    unratedColor: TColor.org.withOpacity(0.2),
                     itemCount: 5,
                     itemSize: 12,
                     itemPadding: EdgeInsets.zero,
@@ -78,9 +78,9 @@ class SongsRow extends StatelessWidget {
                       print(rating);
                     },
                   ),
-                ),
+                )
               ],
-            ),
+            )
           ],
         ),
         Divider(

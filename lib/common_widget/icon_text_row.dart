@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/common/color_extension.dart';
+
+import '../common/color_extension.dart';
 
 class IconTextRow extends StatelessWidget {
   final String title;
   final String icon;
   final VoidCallback onTap;
-  const IconTextRow({super.key, required this.title, required this.icon, required this.onTap});
+
+  const IconTextRow({super.key, required this.title, required this.icon, required this.onTap, });
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +26,17 @@ class IconTextRow extends StatelessWidget {
             title: Text(
               title,
               style: TextStyle(
-                color: TColor.primaryText.withOpacity(0.9),
-                fontSize: 14,
-                fontWeight: FontWeight.w600
-              ),
+                  color: TColor.primaryText.withOpacity(0.9),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600),
             ),
             onTap: onTap,
           ),
         ),
-        Divider(color: TColor.primaryText.withOpacity(0.07),indent: 70,)
+        Divider(
+          color: TColor.primaryText.withOpacity(0.07),
+          indent: 70,
+        ),
       ],
     );
   }

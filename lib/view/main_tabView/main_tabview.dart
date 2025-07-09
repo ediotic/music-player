@@ -1,14 +1,13 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_player/common_widgets/icon_text_row.dart';
+import 'package:music_player/common/color_extension.dart';
+import 'package:music_player/common_widget/icon_text_row.dart';
+import 'package:music_player/common_widget/mini_player_view.dart';
+import 'package:music_player/view/settings/settings_view.dart';
+import 'package:music_player/view/songs/songs_view.dart';
+import 'package:music_player/view_model/splash_view_model.dart';
 
-import '../../common/color_extension.dart';
-import '../../view_model/splasH_view_model.dart';
 import '../home/home_view.dart';
-import '../settings/settings_view.dart';
-import '../songs/songs_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -153,13 +152,13 @@ class _MainTabViewState extends State<MainTabView>
           TabBarView(
             controller: controller,
             children: const [
-               HomeView(),
+              HomeView(),
               SongsView(),
               SettingsView(),
             ],
           ),
 
-          // MiniPlayerView(),
+          MiniPlayerView(),
           
         ],
       ),
